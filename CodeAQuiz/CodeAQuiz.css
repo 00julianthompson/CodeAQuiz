@@ -1,0 +1,145 @@
+::before, ::after {
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+
+
+p {
+    background-color: cornsilk;
+    display: inline-flex;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 70px;
+    width: 200px;
+    
+}
+
+
+:root {
+
+    --hue-natural : 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+body {
+    --hue: var(--hue-natural);
+    padding: 0;
+    margin: 0;
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+
+} 
+
+body.correct {
+    --hue: var(--hue-correct);
+ 
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+
+}
+
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto); 
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+} 
+
+.btn:hover {
+    border-color: black;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hid {
+	display: none;
+}
+
+.button-start-quiz,
+.button-finish-quiz {
+  font-size:        16px;
+  width:            263px;
+  background-color: #64BC62;
+  height:           80px;
+  color:            white;
+  border-radius:    0;
+  &:hover {
+    cursor: pointer;
+    background-color: #AAAAAA;
+  }
+}
+.quiz-clock {
+  background-color: #2C3339;
+  height:           300px;
+  padding-top:      40px;
+  width: 263px;
+  .quiz-timer {
+    font-weight:      bold;
+    color:            white;
+    width:            200px;
+    height:           175px;
+    background-color: #1F242C;
+    border-radius:    50%;
+    margin:           0 auto;    
+    padding-top:      25px;
+    .quiz-countdown-text {
+      text-align: center;
+    }
+    .quiz-time-remaining-text {      
+      padding-bottom: 15px;      
+    }
+    .quiz-time-remaining-label {
+      padding-top: 0px;
+    }
+  }
+}
+#quiz-countdown {
+  font-size: 48px;
+  text-align: center;
+}
